@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="crm_lead_share_link_wizard_view_form" model="ir.ui.view">
+        <field name="name">crm.lead.share.link.wizard.form</field>
+        <field name="model">crm.lead.share.link.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Compartilhar Lead">
+                <field name="lead_id" invisible="1"/>
+                <group>
+                    <field name="share_link" widget="CopyClipboardChar" options="{'string': 'Copiar ligação'}"/>
+                    <field name="partner_ids" widget="many2many_tags_email" placeholder="Adicionar contactos para partilhar o documento..."/>
+                    <field name="note" placeholder="Adicionar uma nota"/>
+                </group>
+                <footer>
+                    <button string="Enviar" name="action_send_mail" type="object" class="btn-primary" data-hotkey="q"/>
+                    <button string="Descartar" class="btn-default" special="cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
